@@ -54,6 +54,36 @@ public class Programmer {
         private String name;
         private byte age;
 
+        ProgrammerBuilder() {
+        }
+
+        public Programmer.ProgrammerBuilder id(String id) {
+            this.id = id;
+            return this;
+        }
+
+        public Programmer.ProgrammerBuilder name(String name) {
+            this.name = name;
+            return this;
+        }
+
+        public Programmer.ProgrammerBuilder age(byte age) {
+            this.age = age;
+            return this;
+        }
+
+        public Programmer build() {
+            return new Programmer(id, name, age);
+        }
+
+        @Override
+        public String toString() {
+            return "Programmer.ProgrammerBuilder{" +
+                    "id='" + id + '\'' +
+                    ", name='" + name + '\'' +
+                    ", age=" + age +
+                    '}';
+        }
     }
 
 }
